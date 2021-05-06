@@ -56,8 +56,7 @@ _____________________________________________________________
 
 Bonus 1. Conta gli ospiti raggruppandoli per anno di nascita
 
-SELECT COUNT(id),`date_of_birth` FROM `ospiti` GROUP BY `date_of_birth`
-
+SELECT COUNT(`id`) AS coetanei,YEAR(date_of_birth) as year FROM `ospiti` GROUP BY YEAR(date_of_birth)
 ______________________________________________________________________
 
 Bonus 2. Somma i prezzi dei pagamenti raggruppandoli per status
