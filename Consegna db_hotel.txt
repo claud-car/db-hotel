@@ -6,14 +6,16 @@ _________________________________________________________
 
 2. Seleziona tutti gli ospiti che sono nati dopo il 1988
 
-SELECT * FROM `ospiti` WHERE `date_of_birth` > "1988"
+SELECT * FROM `ospiti` WHERE `date_of_birth` > "1989-01-01"
 
 _________________________________________________________
 
 3. Seleziona tutti gli ospiti che hanno più di 20 anni (al momento
 dell’esecuzione della query)
 
-SELECT * FROM `ospiti` WHERE `date_of_birth` < "2001-05-06 00:00:00"
+SELECT * FROM `ospiti` WHERE `date_of_birth` < "2001-05-06 00:00:00"  
+
+////DEVE ESSERE AUTOMatico timestamp diff///////
 
 _______________________________________________________________________
 
@@ -31,7 +33,7 @@ _____________________________________________________________
 
 6. Qual è il prezzo massimo pagato?
 
-SELECT MAX(price) FROM `pagamenti`
+SELECT MAX(price) FROM `pagamenti` inserire clausola accettato
 
 ______________________________________________________________
 
@@ -64,3 +66,7 @@ Bonus 2. Somma i prezzi dei pagamenti raggruppandoli per status
 SELECT SUM(price),`status` FROM `pagamenti` GROUP BY `status`
 
 __________________________________________________________________
+
+3. Conta quante volte è stata prenotata ogni stanza
+
+SELECT `stanza_id`,COUNT(`stanza_id`) FROM `prenotazioni` GROUP BY `stanza_id`
